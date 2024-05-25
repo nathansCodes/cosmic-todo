@@ -1,7 +1,7 @@
 use crate::task::{Task, TaskMessage};
 
 use cosmic::iced::{Alignment, Length};
-use cosmic::iced_widget::{column, container, row};
+use cosmic::widget;
 use cosmic::prelude::*;
 use cosmic::widget::{button, text_input};
 use cosmic::app::Command;
@@ -46,7 +46,7 @@ pub enum CollectionMessage {
 
 impl Collection {
     pub fn view(&self) -> Element<CollectionMessage> {
-        let add_button = button(cosmic::widget::icon::Named::new("list-add-symbolic"))
+        let add_button = button(widget::icon::Named::new("list-add-symbolic"))
             .on_press(CollectionMessage::AddTask);
 
         let inputbox = text_input("Start a new task...", &self.add_task_input)
@@ -62,14 +62,13 @@ impl Collection {
             }).on_press(CollectionMessage::FilterChanged(filter)).padding(8)
         };
 
-        let filters = row![
-            filter_button("All", Filter::All),
-            filter_button("Active", Filter::Active),
-            filter_button("Completed", Filter::Completed),
-        ]
-        .spacing(10)
-        .width(Length::Fill)
-        .align_items(Alignment::End);
+        let filters = widget::row()
+            .push(filter_button("All", Filter::All))
+            .push(filter_button("Active", Filter::Active))
+            .push(filter_button("Completed", Filter::Completed))
+            .spacing(10)
+            .width(Length::Fill)
+            .align_items(Alignment::End);
 
         let remove_button = button(match self.filter {
             Filter::All => "Remove All Tasks",
@@ -78,33 +77,37 @@ impl Collection {
         })
         .on_press(CollectionMessage::RemoveTasks);
 
-        let controls = row![filters, remove_button];
+        let controls = widget::row()
+            .push(filters)
+            .push(remove_button);
 
-        let tasks = column(
-            self.tasks
+        let tasks = widget::column()
+            .extend(self.tasks
                 .iter()
                 .enumerate()
                 .filter(|(_, task)| self.filter.matches(task))
                 .map(|(i, task)| {
                     task.view()
                         .map(move |message| CollectionMessage::TaskMessage(i, message))
-                }),
-        )
-        .align_items(Alignment::Start)
-        .spacing(20);
+                }))
+            .align_items(Alignment::Start)
+            .spacing(20);
 
-        let content = column![inputbox, controls, tasks]
+        let content = widget::column()
+            .push(inputbox)
+            .push(controls)
+            .push(tasks)
             .width(500)
             .align_items(Alignment::Center)
             .spacing(25);
 
-        container(content).width(Length::Fill).center_x().into()
+        widget::container(content).width(Length::Fill).center_x().into()
     }
 
     pub fn update(
         &mut self,
         message: CollectionMessage,
-    ) -> cosmic::iced::Command<cosmic::app::Message<CollectionMessage>> {
+    ) -> cosmic::app::Command<CollectionMessage> {
         match message {
             CollectionMessage::TaskMessage(i, TaskMessage::Delete) => {
                 self.tasks.remove(i);

@@ -12,7 +12,7 @@ xdg-basedir = "1.0.0"
 [workspace.dependencies.libcosmic]
 git = "https://github.com/pop-os/libcosmic"
 default-features = true
-features = ["wayland", "tokio", "multi-window"]
+features = ["winit", "tokio", "multi-window"]
 
 [dependencies.cosmic-time]
 git = "https://github.com/pop-os/cosmic-time"

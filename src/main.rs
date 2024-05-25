@@ -6,8 +6,7 @@ use std::fs::File;
 
 use collection::{Collection, CollectionMessage};
 use cosmic::iced::Length;
-use cosmic::iced_widget::row;
-use cosmic::widget::{nav_bar, segmented_button};
+use cosmic::widget::{self, nav_bar, segmented_button};
 use utils::data_path;
 
 use cosmic::prelude::*;
@@ -102,7 +101,7 @@ impl cosmic::Application for App {
             col.view()
                 .map(|collection_msg| Message::CollectionMessage(self.data.current_index, collection_msg))
         } else {
-            row!().into()
+            widget::row().into()
         }
     }
 
@@ -136,7 +135,7 @@ impl cosmic::Application for App {
     fn update(
         &mut self,
         message: Self::Message,
-    ) -> cosmic::iced::Command<cosmic::app::Message<Self::Message>> {
+    ) -> cosmic::app::Command<Self::Message> {
         match message {
             Message::CollectionMessage(i, msg) => {
                 let _ = self.data.collections[i].update(msg);
