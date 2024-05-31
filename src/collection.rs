@@ -1,10 +1,10 @@
 use crate::task::{Task, TaskMessage};
 
-use cosmic::iced::{Alignment, Length};
-use cosmic::widget;
-use cosmic::prelude::*;
-use cosmic::widget::{button, text_input};
 use cosmic::app::Command;
+use cosmic::iced::{Alignment, Length};
+use cosmic::prelude::*;
+use cosmic::widget;
+use cosmic::widget::{button, text_input};
 
 use serde::{Deserialize, Serialize};
 
@@ -45,6 +45,15 @@ pub enum CollectionMessage {
 }
 
 impl Collection {
+    pub fn new(name: &str) -> Self {
+        Self {
+            name: name.to_string(),
+            tasks: Vec::new(),
+            filter: Filter::All,
+            add_task_input: "".to_string(),
+        }
+    }
+
     pub fn view(&self) -> Element<CollectionMessage> {
         let add_button = button(widget::icon::Named::new("list-add-symbolic"))
             .on_press(CollectionMessage::AddTask);
@@ -55,11 +64,14 @@ impl Collection {
             .trailing_icon(add_button.into());
 
         let filter_button = |label, filter| {
-            button(label).style(if filter == self.filter {
-                button::Style::Standard
-            } else {
-                button::Style::Text
-            }).on_press(CollectionMessage::FilterChanged(filter)).padding(8)
+            button(label)
+                .style(if filter == self.filter {
+                    button::Style::Standard
+                } else {
+                    button::Style::Text
+                })
+                .on_press(CollectionMessage::FilterChanged(filter))
+                .padding(8)
         };
 
         let filters = widget::row()
@@ -77,19 +89,19 @@ impl Collection {
         })
         .on_press(CollectionMessage::RemoveTasks);
 
-        let controls = widget::row()
-            .push(filters)
-            .push(remove_button);
+        let controls = widget::row().push(filters).push(remove_button);
 
         let tasks = widget::column()
-            .extend(self.tasks
-                .iter()
-                .enumerate()
-                .filter(|(_, task)| self.filter.matches(task))
-                .map(|(i, task)| {
-                    task.view()
-                        .map(move |message| CollectionMessage::TaskMessage(i, message))
-                }))
+            .extend(
+                self.tasks
+                    .iter()
+                    .enumerate()
+                    .filter(|(_, task)| self.filter.matches(task))
+                    .map(|(i, task)| {
+                        task.view()
+                            .map(move |message| CollectionMessage::TaskMessage(i, message))
+                    }),
+            )
             .align_items(Alignment::Start)
             .spacing(20);
 
@@ -99,9 +111,13 @@ impl Collection {
             .push(tasks)
             .width(500)
             .align_items(Alignment::Center)
-            .spacing(25);
+            .spacing(25)
+            .padding(30);
 
-        widget::container(content).width(Length::Fill).center_x().into()
+        widget::container(content)
+            .width(Length::Fill)
+            .center_x()
+            .into()
     }
 
     pub fn update(
@@ -133,7 +149,7 @@ impl Collection {
             }
             CollectionMessage::FilterChanged(filter) => {
                 self.filter = filter;
-            },
+            }
             CollectionMessage::RemoveTasks => {
                 self.remove_tasks(self.filter.clone());
             }

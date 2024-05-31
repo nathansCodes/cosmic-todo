@@ -1,8 +1,4 @@
-use cosmic::{
-    iced::Length,
-    widget,
-    Command, Element,
-};
+use cosmic::{iced::Length, widget, Command, Element};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -20,10 +16,15 @@ pub enum TaskMessage {
 impl Task {
     pub fn view(&self) -> Element<TaskMessage> {
         widget::row()
-            .push(widget::checkbox(&self.name, self.completed, TaskMessage::Completed).width(Length::Fill))
-            .push(widget::button::destructive("Delete")
-                .leading_icon(widget::icon::Named::new("edit-delete-symbolic"))
-                .on_press(TaskMessage::Delete))
+            .push(
+                widget::checkbox(&self.name, self.completed, TaskMessage::Completed)
+                    .width(Length::Fill),
+            )
+            .push(
+                widget::button::destructive("Delete")
+                    .leading_icon(widget::icon::Named::new("edit-delete-symbolic"))
+                    .on_press(TaskMessage::Delete),
+            )
             .spacing(20)
             .into()
     }

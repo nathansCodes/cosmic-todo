@@ -430,7 +430,7 @@ checksum = "3b43422f69d8ff38f95f1b2bb76517c91589a924d1559a0e935d7c8ce0274c11"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -465,7 +465,7 @@ checksum = "c6fa2087f2753a7da8cc1c0dbfcf89579dd57458e36769de5ac750b4671737ca"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -676,13 +676,13 @@ dependencies = [
 
 [[package]]
 name = "bytemuck_derive"
-version = "1.6.0"
+version = "1.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4da9a32f3fed317401fa3c862968128267c3106685286e15d5aaa3d7389c2f60"
+checksum = "369cfaf2a5bed5d8f8202073b2e093c9f508251de1551a0deb4253e4c7d80909"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -995,7 +995,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "atomicwrites",
  "cosmic-config-derive",
@@ -1014,21 +1014,10 @@ dependencies = [
 [[package]]
 name = "cosmic-config-derive"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "quote",
  "syn 1.0.109",
-]
-
-[[package]]
-name = "cosmic-test"
-version = "0.1.0"
-dependencies = [
- "cosmic-time",
- "libcosmic",
- "serde",
- "serde_json",
- "xdg-basedir",
 ]
 
 [[package]]
@@ -1056,7 +1045,7 @@ dependencies = [
 [[package]]
 name = "cosmic-theme"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "almost",
  "cosmic-config",
@@ -1078,6 +1067,17 @@ dependencies = [
  "float-cmp",
  "libcosmic",
  "once_cell",
+]
+
+[[package]]
+name = "cosmic-todo"
+version = "0.1.0"
+dependencies = [
+ "cosmic-time",
+ "libcosmic",
+ "serde",
+ "serde_json",
+ "xdg-basedir",
 ]
 
 [[package]]
@@ -1171,7 +1171,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "edb49164822f3ee45b17acd4a208cfc1251410cf0cad9a833234c9890774dd9f"
 dependencies = [
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -1211,7 +1211,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "strsim",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -1222,7 +1222,7 @@ checksum = "733cabb43482b1a1b53eee8583c2b9e8684d592215ea83efd305dd31bc2f0178"
 dependencies = [
  "darling_core",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -1251,7 +1251,7 @@ dependencies = [
  "darling",
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -1407,7 +1407,7 @@ checksum = "5c785274071b1b420972453b306eeca06acf4633829db4223b58a2a8c5953bc4"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -1444,9 +1444,9 @@ dependencies = [
 
 [[package]]
 name = "euclid"
-version = "0.22.9"
+version = "0.22.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "87f253bc5c813ca05792837a0ff4b3a580336b224512d48f7eda1d7dd9210787"
+checksum = "e0f0eb73b934648cd7a4a61f1b15391cd95dab0b4da6e2e66c2a072c144b4a20"
 dependencies = [
  "num-traits",
 ]
@@ -1658,7 +1658,7 @@ checksum = "1a5c6c585bc94aaf2c7b51dd4c2ba22680844aba4c687be581871a6f518c5742"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -1793,7 +1793,7 @@ checksum = "87750cf4b7a4c0625b1529e4c543c2182106e4dedc60a2a6455e00d212c489ac"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -2085,7 +2085,7 @@ dependencies = [
 [[package]]
 name = "iced"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "dnd",
  "iced_accessibility",
@@ -2103,7 +2103,7 @@ dependencies = [
 [[package]]
 name = "iced_accessibility"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "accesskit",
  "accesskit_unix",
@@ -2113,7 +2113,7 @@ dependencies = [
 [[package]]
 name = "iced_core"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "bitflags 2.5.0",
  "dnd",
@@ -2135,7 +2135,7 @@ dependencies = [
 [[package]]
 name = "iced_futures"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "futures",
  "iced_core",
@@ -2148,7 +2148,7 @@ dependencies = [
 [[package]]
 name = "iced_graphics"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "bitflags 2.5.0",
  "bytemuck",
@@ -2172,7 +2172,7 @@ dependencies = [
 [[package]]
 name = "iced_renderer"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "iced_graphics",
  "iced_tiny_skia",
@@ -2184,7 +2184,7 @@ dependencies = [
 [[package]]
 name = "iced_runtime"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "dnd",
  "iced_accessibility",
@@ -2198,7 +2198,7 @@ dependencies = [
 [[package]]
 name = "iced_sctk"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "enum-repr",
  "float-cmp",
@@ -2224,7 +2224,7 @@ dependencies = [
 [[package]]
 name = "iced_style"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "iced_core",
  "once_cell",
@@ -2234,7 +2234,7 @@ dependencies = [
 [[package]]
 name = "iced_tiny_skia"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "bytemuck",
  "cosmic-text",
@@ -2251,7 +2251,7 @@ dependencies = [
 [[package]]
 name = "iced_wgpu"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "bitflags 2.5.0",
  "bytemuck",
@@ -2277,7 +2277,7 @@ dependencies = [
 [[package]]
 name = "iced_widget"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "dnd",
  "iced_renderer",
@@ -2293,7 +2293,7 @@ dependencies = [
 [[package]]
 name = "iced_winit"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "dnd",
  "iced_graphics",
@@ -2568,7 +2568,7 @@ checksum = "97b3888a4aecf77e811145cadf6eef5901f4782c53886191b2f693f24761847c"
 [[package]]
 name = "libcosmic"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#0607161276805c66b8c2b382bbc2f83618d18e28"
+source = "git+https://github.com/pop-os/libcosmic#8b0bb6a677ef7dfc02f97e1f579308cf3c18eefd"
 dependencies = [
  "apply",
  "ashpd",
@@ -2735,9 +2735,9 @@ dependencies = [
 
 [[package]]
 name = "lyon_tessellation"
-version = "1.0.14"
+version = "1.0.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4470bd0b1f29eda66068ab1fd47719facda0a136b829bcca69287ed0ac40a134"
+checksum = "579d42360a4b09846eff2feef28f538696c7d6c7439bfa65874ff3cbe0951b2c"
 dependencies = [
  "float_next_after",
  "lyon_path",
@@ -3042,7 +3042,7 @@ dependencies = [
  "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -3193,7 +3193,7 @@ dependencies = [
  "proc-macro-error",
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -3227,7 +3227,7 @@ dependencies = [
  "by_address",
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -3249,9 +3249,9 @@ dependencies = [
 
 [[package]]
 name = "parking_lot"
-version = "0.12.2"
+version = "0.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7e4af0ca4f6caed20e900d564c242b8e5d4903fdacf31d3daf527b66fe6f42fb"
+checksum = "f1bf18183cf54e8d6059647fc3063646a1801cf30896933ec2311622cc4b9a27"
 dependencies = [
  "lock_api",
  "parking_lot_core 0.9.10",
@@ -3326,7 +3326,7 @@ dependencies = [
  "phf_shared",
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -3882,7 +3882,7 @@ checksum = "6048858004bcff69094cd972ed40a32500f153bd3be9f716b2eed2e8217c4838"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -3905,7 +3905,7 @@ checksum = "6c64451ba24fc7a6a2d60fc75dd9c83c90903b19028d4eff35e88fc1e86564e9"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -4152,9 +4152,9 @@ dependencies = [
 
 [[package]]
 name = "swash"
-version = "0.1.15"
+version = "0.1.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "06ec889a8e0a6fcb91041996c8f1f6be0fe1a09e94478785e07c32ce2bca2d2b"
+checksum = "682a612b50baf09e8a039547ecf49e6c155690dcb751b1bcb19c93cdeb3d42d4"
 dependencies = [
  "read-fonts",
  "yazi",
@@ -4174,9 +4174,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.65"
+version = "2.0.66"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d2863d96a84c6439701d7a38f9de935ec562c8832cc55d1dde0f513b52fad106"
+checksum = "c42f3f41a2de00b01c0aaad383c5a45241efc8b2d1eda5661812fda5f3cdcff5"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4241,7 +4241,7 @@ checksum = "46c3384250002a6d5af4d114f2845d37b57521033f30d5c3f46c4d70e1197533"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -4382,7 +4382,7 @@ checksum = "34704c8d6ebcbc939824180af020566b01a7c01f80641264eba0999f6c2b6be7"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -4626,7 +4626,7 @@ dependencies = [
  "once_cell",
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
  "wasm-bindgen-shared",
 ]
 
@@ -4660,7 +4660,7 @@ checksum = "e94f17b526d0a461a191c78ea52bbce64071ed5c04c9ffe424dcb38f74171bb7"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
  "wasm-bindgen-backend",
  "wasm-bindgen-shared",
 ]
@@ -4832,7 +4832,7 @@ dependencies = [
  "js-sys",
  "log",
  "naga",
- "parking_lot 0.12.2",
+ "parking_lot 0.12.3",
  "profiling",
  "raw-window-handle",
  "smallvec",
@@ -4859,7 +4859,7 @@ dependencies = [
  "log",
  "naga",
  "once_cell",
- "parking_lot 0.12.2",
+ "parking_lot 0.12.3",
  "profiling",
  "raw-window-handle",
  "rustc-hash",
@@ -4899,7 +4899,7 @@ dependencies = [
  "naga",
  "objc",
  "once_cell",
- "parking_lot 0.12.2",
+ "parking_lot 0.12.3",
  "profiling",
  "range-alloc",
  "raw-window-handle",
@@ -5508,7 +5508,7 @@ dependencies = [
  "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
  "zvariant_utils 2.0.0",
 ]
 
@@ -5557,7 +5557,7 @@ checksum = "15e934569e47891f7d9411f1a451d947a60e000ab3bd24fbb970f000387d1b3b"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -5619,7 +5619,7 @@ dependencies = [
  "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
  "zvariant_utils 2.0.0",
 ]
 
@@ -5642,5 +5642,5 @@ checksum = "fc242db087efc22bd9ade7aa7809e4ba828132edc312871584a6b4391bdf8786"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.65",
+ "syn 2.0.66",
 ]
